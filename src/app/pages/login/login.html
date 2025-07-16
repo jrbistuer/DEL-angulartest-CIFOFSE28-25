@@ -5,3 +5,36 @@
 <h2>Benvingut a la pàgina de login</h2>
 
 <a routerLink="/home">Anar a la pàgina de Home</a>
+
+<form>
+  <label for="username">Usuari:</label>
+  <input type="text" id="username" name="username" required>
+  <br>
+  <label for="password">Contrasenya:</label>
+  <input type="password" id="password" name="password" required>
+  <br>
+  <button type="button" (click)="enviar()">Iniciar sessió amb VanillaJS</button>
+</form>
+
+<br>
+<hr>
+<br>
+
+<form [formGroup]="loginForm">
+  <label for="username">Usuari:</label>
+  <input type="text" id="username" formControlName="username" required>
+  <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+    @if (loginForm.get('username')!.errors?.['required']) {
+      <div>Camp és requerit.</div>
+    }
+    @if (loginForm.get('username')!.errors?.['email']) {
+      <div>Camp ha de ser un email.</div>
+    }
+    
+  </div>
+  <br>
+  <label for="password">Contrasenya:</label>
+  <input type="password" id="password" formControlName="password" required>
+  <br>
+  <button type="button" (click)="enviarReactiveForm()">Iniciar sessió amb ReactiveForm</button>
+</form>
