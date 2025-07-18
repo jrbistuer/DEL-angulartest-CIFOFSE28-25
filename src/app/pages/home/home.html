@@ -5,3 +5,55 @@
 <h2>Benvingut a la pàgina de Home</h2>
 
 <a routerLink="/login">Anar a la pàgina de Login</a>
+
+<h2>Formulari de llibres</h2>
+
+<!-- /* formulari de llibres amb els camps:
+
+  id: number;
+  titol: string;
+  autor: string;
+  anyPublicacio?: number;
+  editorial: string;
+  pagines: number;
+  isbn?: string; */ -->
+<form [formGroup]="bookForm">
+
+  <label for="titol">Títol:</label>
+  <input id="titol" formControlName="titol">
+  <br/>
+
+  <label for="autor">Autor:</label>
+  <input id="autor" formControlName="autor">
+  <br/>
+
+  <label for="anyPublicacio">Any de publicació:</label>
+  <input id="anyPublicacio" type="number" formControlName="anyPublicacio">
+  <br/>
+
+  <label for="editorial">Editorial:</label>
+  <input id="editorial" formControlName="editorial">
+  <br/>
+
+  <label for="pagines">Pàgines:</label>
+  <input id="pagines" type="number" formControlName="pagines">
+  <br/>
+
+  <label for="isbn">ISBN:</label>
+  <input id="isbn" formControlName="isbn">
+  <br/>
+
+  <button type="button" (click)="submitBook()">Afegir llibre</button>
+  <button type="button" (click)="submitEditBook()">Editar llibre</button>
+
+</form>
+
+<h2>Llibres afegits:</h2>
+<ul>
+  @for (llibre of llistaLlibres; track $index) {
+    <li>{{$index}} - {{ llibre.titol }} - {{ llibre.autor }} - 
+      <span (click)="editLlibre($index)">edit</span> - 
+      <span (click)="deleteLlibre($index)">delete</span>
+    </li>
+  }
+</ul>
