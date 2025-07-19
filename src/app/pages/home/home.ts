@@ -5,9 +5,11 @@ import { IBook } from '../../models/interfaces';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BooksService } from '../../services/books';
 
+import {MatButtonModule} from '@angular/material/button';
+
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, Header, ReactiveFormsModule],
+  imports: [RouterModule, Header, ReactiveFormsModule, MatButtonModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
