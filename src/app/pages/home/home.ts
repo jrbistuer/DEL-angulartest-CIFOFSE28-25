@@ -4,12 +4,13 @@ import { Header } from '../../components/header/header';
 import { IBook } from '../../models/interfaces';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BooksService } from '../../services/books';
-
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, Header, ReactiveFormsModule, MatButtonModule],
+  imports: [RouterModule, Header, ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
@@ -29,7 +30,7 @@ export class Home {
 
   createBookForm(): void {
     this.bookForm = new FormGroup({
-      titol: new FormControl('', Validators.required),
+      titol: new FormControl('', [Validators.required, Validators.minLength(3)]),
       autor: new FormControl('', Validators.required),
       anyPublicacio: new FormControl(''),
       editorial: new FormControl('', Validators.required),

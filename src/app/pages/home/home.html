@@ -19,31 +19,44 @@
   isbn?: string; */ -->
 <form [formGroup]="bookForm">
 
-  <label for="titol">Títol:</label>
-  <input id="titol" formControlName="titol">
-  <br/>
+  <mat-form-field>
+    <mat-label>Títol:</mat-label>
+    <input matInput formControlName="titol">
+  </mat-form-field>
+  <br>
 
-  <label for="autor">Autor:</label>
-  <input id="autor" formControlName="autor">
-  <br/>
+  <mat-form-field>
+    <mat-label>Autor:</mat-label>
+    <input matInput formControlName="autor">
+  </mat-form-field>
+  <br>
 
-  <label for="anyPublicacio">Any de publicació:</label>
-  <input id="anyPublicacio" type="number" formControlName="anyPublicacio">
-  <br/>
+  <mat-form-field>
+    <mat-label>Any de publicació:</mat-label>
+    <input matInput type="number" formControlName="anyPublicacio">
+  </mat-form-field>
+  <br>
 
-  <label for="editorial">Editorial:</label>
-  <input id="editorial" formControlName="editorial">
-  <br/>
+  <mat-form-field>
+    <mat-label>Editorial:</mat-label>
+    <input matInput formControlName="editorial">
+  </mat-form-field>
+  <br>
 
-  <label for="pagines">Pàgines:</label>
-  <input id="pagines" type="number" formControlName="pagines">
-  <br/>
+  <mat-form-field>
+    <mat-label>Pàgines:</mat-label>
+    <input matInput type="number" formControlName="pagines">
+  </mat-form-field>
+  <br>
 
-  <label for="isbn">ISBN:</label>
-  <input id="isbn" formControlName="isbn">
-  <br/>
+  <mat-form-field>
+    <mat-label>ISBN:</mat-label>
+    <input matInput formControlName="isbn">
+  </mat-form-field>
+  <br>
 
   <button  matButton="outlined" type="button" (click)="submitBook()">Afegir llibre</button>
+
   <button  matButton="outlined" type="button" (click)="submitEditBook()">Editar llibre</button>
 
 </form>

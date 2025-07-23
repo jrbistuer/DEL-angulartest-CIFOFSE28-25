@@ -31,3 +31,20 @@ html {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+:root {
+  @include mat.form-field-overrides((
+    disabled-input-text-placeholder-color: orange,
+    disabled-leading-icon-color: red,
+    outlined-outline-width: 22px,
+    outlined-input-text-color: green,
+    outlined-focus-label-text-color: yellow,
+  ));
+}
