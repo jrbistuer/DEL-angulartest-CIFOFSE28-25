@@ -8,58 +8,7 @@
 
 <h2>Formulari de llibres</h2>
 
-<!-- /* formulari de llibres amb els camps:
-
-  id: number;
-  titol: string;
-  autor: string;
-  anyPublicacio?: number;
-  editorial: string;
-  pagines: number;
-  isbn?: string; */ -->
-<form [formGroup]="bookForm">
-
-  <mat-form-field>
-    <mat-label>Títol:</mat-label>
-    <input matInput formControlName="titol">
-  </mat-form-field>
-  <br>
-
-  <mat-form-field>
-    <mat-label>Autor:</mat-label>
-    <input matInput formControlName="autor">
-  </mat-form-field>
-  <br>
-
-  <mat-form-field>
-    <mat-label>Any de publicació:</mat-label>
-    <input matInput type="number" formControlName="anyPublicacio">
-  </mat-form-field>
-  <br>
-
-  <mat-form-field>
-    <mat-label>Editorial:</mat-label>
-    <input matInput formControlName="editorial">
-  </mat-form-field>
-  <br>
-
-  <mat-form-field>
-    <mat-label>Pàgines:</mat-label>
-    <input matInput type="number" formControlName="pagines">
-  </mat-form-field>
-  <br>
-
-  <mat-form-field>
-    <mat-label>ISBN:</mat-label>
-    <input matInput formControlName="isbn">
-  </mat-form-field>
-  <br>
-
-  <button  matButton="outlined" type="button" (click)="submitBook()">Afegir llibre</button>
-
-  <button  matButton="outlined" type="button" (click)="submitEditBook()">Editar llibre</button>
-
-</form>
+<app-form-llibres (onSubmit)="submitBook($event)" [indexLlibre]="index" (onEdit)="submitEditBook($event)"></app-form-llibres>
 
 <h2>Llibres afegits:</h2>
 <ul>
